@@ -1,6 +1,4 @@
-from Tarea import Tarea
-from Manejador import *
-
+from Manejador import agregarTarea, listarTareas, marcarCompletada, borrarTareas
 
 def ProgramaPrincipal():
     print("***Bienvenido al sistema***")
@@ -25,7 +23,7 @@ def ProgramaPrincipal():
             marcarCompletada()
 
         elif(seleccion == "4"):
-            borarTareas()
+            borrarTareas()
 
         else:
             print("seleccion incorrecta")
