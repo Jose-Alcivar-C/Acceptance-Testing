@@ -1,3 +1,5 @@
 python -m venv venv
 
 pip install -Ur requirements.txt
+
+behave --format=json --outfile=josealcivar.json
