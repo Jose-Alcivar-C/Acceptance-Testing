@@ -1,4 +1,4 @@
-from Manejador import agregarTarea, listarTareas, marcarCompletada, borrarTareas
+from Manejador import agregarTarea, listarTareas, marcarCompletada, borrarTareas, cambiarNombreTarea
 
 def ProgramaPrincipal():
     print("***Bienvenido al sistema***")
@@ -8,6 +8,8 @@ def ProgramaPrincipal():
         print("2. Enumerar todas las tareas en la lista de tareas pendientes")
         print("3. Marcar una tarea como completada")
         print("4. Borrar toda la lista de tareas pendientes")
+        print("5. Cambiar nombre a una tarea")
+        print("6. Salir")
         print("")
         
         seleccion = input("Ingrese su seleccion: ")
@@ -24,6 +26,14 @@ def ProgramaPrincipal():
 
         elif(seleccion == "4"):
             borrarTareas()
+
+        elif(seleccion == "5"):
+            cambiarNombreTarea()
+
+        elif(seleccion == "6"):
+            print("Programa finalizado")
+            print("")
+            break
 
         else:
             print("seleccion incorrecta")

@@ -1,11 +1,13 @@
 from Tarea import Tarea
 
-listaDeTareas = []
+listaDeTareas = list([])
 
 def agregarTarea():
-    nombre = input("Ingrese nombre de su tarea")
+    nombre = input("Ingrese nombre de su tarea: ")
+    print("")
+    print("Tarea agregada exitosamente")
+    print("")
     tarea = Tarea(nombre)
-
     listaDeTareas.append(tarea)
 
 
@@ -24,8 +26,51 @@ def listarTareas():
 
 
 def marcarCompletada():
-    print("funcion1")
+    eleccion = input("Ingrese numero de tarea que desea marcar como completada: ")
+    print("")
+
+    try:
+        valor = int(eleccion)
+        if( (valor > 0) and (valor <= len(listaDeTareas) ) ):
+            listaDeTareas.pop(valor-1)
+            print("Tarea marcada exitosamente exitosamente")
+            print("")
+
+        else:
+            print("Numero de tarea no valido.")
+            print("")
+
+    except:
+        print("Debe ingresar un numero")
+        print("")
 
 
 def borrarTareas():
-    print("funcion4")
+    listaDeTareas.clear()
+    print("Tareas borradas exitosamente")
+    print("")
+
+
+def cambiarNombreTarea():
+    numero = input("Ingrese numero de tarea a cambiar: ")
+    
+    try:
+        numero = int(numero)
+    except:
+        print("")
+        print("Debe ingresar un numero")
+        print("")
+        return
+    
+    if( (numero > 0) and (numero <= len(listaDeTareas) ) ):
+        nombre = input("Ingrese nuevo nombre: ")
+        print("")
+        listaDeTareas[numero-1].setNombre(nombre)
+        print("Nombre cambiado exitosamente")
+        print("")
+    
+    else:
+        print("")
+        print("Numero de tarea no valido")
+        print("")
+
